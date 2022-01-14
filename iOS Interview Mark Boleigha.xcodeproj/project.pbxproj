@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */; };
-		DE1C11C227919FDC00C03E81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C127919FDC00C03E81 /* SceneDelegate.swift */; };
 		DE1C11C427919FDC00C03E81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C327919FDC00C03E81 /* ViewController.swift */; };
 		DE1C11C727919FDC00C03E81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11C527919FDC00C03E81 /* Main.storyboard */; };
 		DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C827919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		DE1C11BC27919FDC00C03E81 /* iOS Interview Mark Boleigha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Interview Mark Boleigha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE1C11C127919FDC00C03E81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE1C11C327919FDC00C03E81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE1C11C627919FDC00C03E81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE1C11C927919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Interview_Mark_Boleigha.xcdatamodel; sourceTree = "<group>"; };
@@ -81,8 +79,12 @@
 		DE1C11BE27919FDC00C03E81 /* iOS Interview Mark Boleigha */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C11E42791A18D00C03E81 /* Data */,
+				DE1C11E72791A1BC00C03E81 /* Services */,
+				DE1C11E52791A19900C03E81 /* Presentation */,
+				DE1C11E62791A1AA00C03E81 /* Views */,
+				DE1C11E82791A1C500C03E81 /* Utils */,
 				DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */,
-				DE1C11C127919FDC00C03E81 /* SceneDelegate.swift */,
 				DE1C11C327919FDC00C03E81 /* ViewController.swift */,
 				DE1C11C527919FDC00C03E81 /* Main.storyboard */,
 				DE1C11CB27919FE500C03E81 /* Assets.xcassets */,
@@ -100,6 +102,41 @@
 				DE1C11DB27919FE500C03E81 /* Info.plist */,
 			);
 			path = "iOS Interview Mark BoleighaTests";
+			sourceTree = "<group>";
+		};
+		DE1C11E42791A18D00C03E81 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DE1C11E52791A19900C03E81 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DE1C11E62791A1AA00C03E81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE1C11E72791A1BC00C03E81 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DE1C11E82791A1C500C03E81 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +242,6 @@
 			files = (
 				DE1C11C427919FDC00C03E81 /* ViewController.swift in Sources */,
 				DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */,
-				DE1C11C227919FDC00C03E81 /* SceneDelegate.swift in Sources */,
 				DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
