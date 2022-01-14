@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */; };
+		DE1C11C227919FDC00C03E81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C127919FDC00C03E81 /* SceneDelegate.swift */; };
+		DE1C11C427919FDC00C03E81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C327919FDC00C03E81 /* ViewController.swift */; };
+		DE1C11C727919FDC00C03E81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11C527919FDC00C03E81 /* Main.storyboard */; };
+		DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C827919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld */; };
+		DE1C11CC27919FE500C03E81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11CB27919FE500C03E81 /* Assets.xcassets */; };
+		DE1C11CF27919FE500C03E81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */; };
+		DE1C11DA27919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE1C11D627919FE500C03E81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE1C11B427919FDC00C03E81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1C11BB27919FDC00C03E81;
+			remoteInfo = "iOS Interview Mark Boleigha";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE1C11BC27919FDC00C03E81 /* iOS Interview Mark Boleigha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Interview Mark Boleigha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE1C11C127919FDC00C03E81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE1C11C327919FDC00C03E81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE1C11C627919FDC00C03E81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE1C11C927919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Interview_Mark_Boleigha.xcdatamodel; sourceTree = "<group>"; };
+		DE1C11CB27919FE500C03E81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE1C11CE27919FE500C03E81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE1C11D027919FE500C03E81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1C11D527919FE500C03E81 /* iOS Interview Mark BoleighaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Interview Mark BoleighaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Interview_Mark_BoleighaTests.swift; sourceTree = "<group>"; };
+		DE1C11DB27919FE500C03E81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE1C11B927919FDC00C03E81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1C11D227919FE500C03E81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE1C11B327919FDC00C03E81 = {
+			isa = PBXGroup;
+			children = (
+				DE1C11BE27919FDC00C03E81 /* iOS Interview Mark Boleigha */,
+				DE1C11D827919FE500C03E81 /* iOS Interview Mark BoleighaTests */,
+				DE1C11BD27919FDC00C03E81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE1C11BD27919FDC00C03E81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C11BC27919FDC00C03E81 /* iOS Interview Mark Boleigha.app */,
+				DE1C11D527919FE500C03E81 /* iOS Interview Mark BoleighaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE1C11BE27919FDC00C03E81 /* iOS Interview Mark Boleigha */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */,
+				DE1C11C127919FDC00C03E81 /* SceneDelegate.swift */,
+				DE1C11C327919FDC00C03E81 /* ViewController.swift */,
+				DE1C11C527919FDC00C03E81 /* Main.storyboard */,
+				DE1C11CB27919FE500C03E81 /* Assets.xcassets */,
+				DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */,
+				DE1C11D027919FE500C03E81 /* Info.plist */,
+				DE1C11C827919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld */,
+			);
+			path = "iOS Interview Mark Boleigha";
+			sourceTree = "<group>";
+		};
+		DE1C11D827919FE500C03E81 /* iOS Interview Mark BoleighaTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */,
+				DE1C11DB27919FE500C03E81 /* Info.plist */,
+			);
+			path = "iOS Interview Mark BoleighaTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE1C11BB27919FDC00C03E81 /* iOS Interview Mark Boleigha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1C11DE27919FE500C03E81 /* Build configuration list for PBXNativeTarget "iOS Interview Mark Boleigha" */;
+			buildPhases = (
+				DE1C11B827919FDC00C03E81 /* Sources */,
+				DE1C11B927919FDC00C03E81 /* Frameworks */,
+				DE1C11BA27919FDC00C03E81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS Interview Mark Boleigha";
+			productName = "iOS Interview Mark Boleigha";
+			productReference = DE1C11BC27919FDC00C03E81 /* iOS Interview Mark Boleigha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE1C11D427919FE500C03E81 /* iOS Interview Mark BoleighaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1C11E127919FE500C03E81 /* Build configuration list for PBXNativeTarget "iOS Interview Mark BoleighaTests" */;
+			buildPhases = (
+				DE1C11D127919FE500C03E81 /* Sources */,
+				DE1C11D227919FE500C03E81 /* Frameworks */,
+				DE1C11D327919FE500C03E81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE1C11D727919FE500C03E81 /* PBXTargetDependency */,
+			);
+			name = "iOS Interview Mark BoleighaTests";
+			productName = "iOS Interview Mark BoleighaTests";
+			productReference = DE1C11D527919FE500C03E81 /* iOS Interview Mark BoleighaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE1C11B427919FDC00C03E81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Umba;
+				TargetAttributes = {
+					DE1C11BB27919FDC00C03E81 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					DE1C11D427919FE500C03E81 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DE1C11BB27919FDC00C03E81;
+					};
+				};
+			};
+			buildConfigurationList = DE1C11B727919FDC00C03E81 /* Build configuration list for PBXProject "iOS Interview Mark Boleigha" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE1C11B327919FDC00C03E81;
+			productRefGroup = DE1C11BD27919FDC00C03E81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE1C11BB27919FDC00C03E81 /* iOS Interview Mark Boleigha */,
+				DE1C11D427919FE500C03E81 /* iOS Interview Mark BoleighaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE1C11BA27919FDC00C03E81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1C11CF27919FE500C03E81 /* LaunchScreen.storyboard in Resources */,
+				DE1C11CC27919FE500C03E81 /* Assets.xcassets in Resources */,
+				DE1C11C727919FDC00C03E81 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1C11D327919FE500C03E81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE1C11B827919FDC00C03E81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1C11C427919FDC00C03E81 /* ViewController.swift in Sources */,
+				DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */,
+				DE1C11C227919FDC00C03E81 /* SceneDelegate.swift in Sources */,
+				DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1C11D127919FE500C03E81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1C11DA27919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE1C11D727919FE500C03E81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1C11BB27919FDC00C03E81 /* iOS Interview Mark Boleigha */;
+			targetProxy = DE1C11D627919FE500C03E81 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE1C11C527919FDC00C03E81 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE1C11C627919FDC00C03E81 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE1C11CE27919FE500C03E81 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE1C11DC27919FE500C03E81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE1C11DD27919FE500C03E81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE1C11DF27919FE500C03E81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22FN4D2YAD;
+				INFOPLIST_FILE = "iOS Interview Mark Boleigha/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umba.iOS-Interview-Mark-Boleigha";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE1C11E027919FE500C03E81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22FN4D2YAD;
+				INFOPLIST_FILE = "iOS Interview Mark Boleigha/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umba.iOS-Interview-Mark-Boleigha";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE1C11E227919FE500C03E81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22FN4D2YAD;
+				INFOPLIST_FILE = "iOS Interview Mark BoleighaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umba.iOS-Interview-Mark-BoleighaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Interview Mark Boleigha.app/iOS Interview Mark Boleigha";
+			};
+			name = Debug;
+		};
+		DE1C11E327919FE500C03E81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22FN4D2YAD;
+				INFOPLIST_FILE = "iOS Interview Mark BoleighaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.umba.iOS-Interview-Mark-BoleighaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Interview Mark Boleigha.app/iOS Interview Mark Boleigha";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE1C11B727919FDC00C03E81 /* Build configuration list for PBXProject "iOS Interview Mark Boleigha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1C11DC27919FE500C03E81 /* Debug */,
+				DE1C11DD27919FE500C03E81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1C11DE27919FE500C03E81 /* Build configuration list for PBXNativeTarget "iOS Interview Mark Boleigha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1C11DF27919FE500C03E81 /* Debug */,
+				DE1C11E027919FE500C03E81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1C11E127919FE500C03E81 /* Build configuration list for PBXNativeTarget "iOS Interview Mark BoleighaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1C11E227919FE500C03E81 /* Debug */,
+				DE1C11E327919FE500C03E81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE1C11C827919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE1C11C927919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodel */,
+			);
+			currentVersion = DE1C11C927919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodel */;
+			path = iOS_Interview_Mark_Boleigha.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE1C11B427919FDC00C03E81 /* Project object */;
+}
