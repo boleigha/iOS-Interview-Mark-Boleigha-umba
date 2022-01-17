@@ -3,17 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3D629B1DDCB2A29401A3045 /* Pods_iOS_Interview_Mark_BoleighaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EC898CC3E2A4028B687F41 /* Pods_iOS_Interview_Mark_BoleighaTests.framework */; };
 		DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */; };
-		DE1C11C427919FDC00C03E81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C327919FDC00C03E81 /* ViewController.swift */; };
-		DE1C11C727919FDC00C03E81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11C527919FDC00C03E81 /* Main.storyboard */; };
 		DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11C827919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld */; };
 		DE1C11CC27919FE500C03E81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11CB27919FE500C03E81 /* Assets.xcassets */; };
 		DE1C11CF27919FE500C03E81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */; };
 		DE1C11DA27919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */; };
+		DE1C11EC279457DF00C03E81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11EB279457DF00C03E81 /* LoginViewController.swift */; };
+		DE1C11EE2794585E00C03E81 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11ED2794585E00C03E81 /* TabBarController.swift */; };
+		DE1C11F12794880A00C03E81 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F02794880A00C03E81 /* Network.swift */; };
+		DE1C11F22794880A00C03E81 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F02794880A00C03E81 /* Network.swift */; };
+		DE1C11F427948C4100C03E81 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F327948C4100C03E81 /* Reachability.swift */; };
+		DE1C11F527948C4100C03E81 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F327948C4100C03E81 /* Reachability.swift */; };
+		DE1C11F727949C9400C03E81 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F627949C9400C03E81 /* NetworkService.swift */; };
+		DE1C11F827949C9400C03E81 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F627949C9400C03E81 /* NetworkService.swift */; };
+		DE1C11FA27952CF100C03E81 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F927952CF100C03E81 /* SplashViewController.swift */; };
+		DE1C11FB27952CF100C03E81 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F927952CF100C03E81 /* SplashViewController.swift */; };
+		DE1C11FE27952DD700C03E81 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11FD27952DD700C03E81 /* Navigation.swift */; };
+		DE1C11FF27952DD700C03E81 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11FD27952DD700C03E81 /* Navigation.swift */; };
+		DE1C1202279547D800C03E81 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C1201279547D800C03E81 /* UIView+Extensions.swift */; };
+		DE1C120427954CC400C03E81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C120327954CC400C03E81 /* Colors.swift */; };
+		E54409D8E9E02FE8FC4F17BB /* Pods_iOS_Interview_Mark_Boleigha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F12D77009D7F8AC989F364 /* Pods_iOS_Interview_Mark_Boleigha.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16F70DE83F48D0456C0073E2 /* Pods-iOS Interview Mark Boleigha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Interview Mark Boleigha.debug.xcconfig"; path = "Target Support Files/Pods-iOS Interview Mark Boleigha/Pods-iOS Interview Mark Boleigha.debug.xcconfig"; sourceTree = "<group>"; };
+		5E3169DBAA2972651769E024 /* Pods-iOS Interview Mark BoleighaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Interview Mark BoleighaTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS Interview Mark BoleighaTests/Pods-iOS Interview Mark BoleighaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		78EC898CC3E2A4028B687F41 /* Pods_iOS_Interview_Mark_BoleighaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Interview_Mark_BoleighaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F12D77009D7F8AC989F364 /* Pods_iOS_Interview_Mark_Boleigha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Interview_Mark_Boleigha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE774BA136D8944A72D86612 /* Pods-iOS Interview Mark Boleigha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Interview Mark Boleigha.release.xcconfig"; path = "Target Support Files/Pods-iOS Interview Mark Boleigha/Pods-iOS Interview Mark Boleigha.release.xcconfig"; sourceTree = "<group>"; };
 		DE1C11BC27919FDC00C03E81 /* iOS Interview Mark Boleigha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Interview Mark Boleigha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE1C11C327919FDC00C03E81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE1C11C627919FDC00C03E81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE1C11C927919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_Interview_Mark_Boleigha.xcdatamodel; sourceTree = "<group>"; };
 		DE1C11CB27919FE500C03E81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE1C11CE27919FE500C03E81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +55,16 @@
 		DE1C11D527919FE500C03E81 /* iOS Interview Mark BoleighaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Interview Mark BoleighaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Interview_Mark_BoleighaTests.swift; sourceTree = "<group>"; };
 		DE1C11DB27919FE500C03E81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1C11EB279457DF00C03E81 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DE1C11ED2794585E00C03E81 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DE1C11F02794880A00C03E81 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DE1C11F327948C4100C03E81 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		DE1C11F627949C9400C03E81 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DE1C11F927952CF100C03E81 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DE1C11FD27952DD700C03E81 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		DE1C1201279547D800C03E81 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		DE1C120327954CC400C03E81 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FD00EA3F67100C327DEB002B /* Pods-iOS Interview Mark BoleighaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; path = "Target Support Files/Pods-iOS Interview Mark BoleighaTests/Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54409D8E9E02FE8FC4F17BB /* Pods_iOS_Interview_Mark_Boleigha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +80,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D629B1DDCB2A29401A3045 /* Pods_iOS_Interview_Mark_BoleighaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37A556A2B156B6B1E01C1907 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9F12D77009D7F8AC989F364 /* Pods_iOS_Interview_Mark_Boleigha.framework */,
+				78EC898CC3E2A4028B687F41 /* Pods_iOS_Interview_Mark_BoleighaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37E5C4064310166B345D40FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16F70DE83F48D0456C0073E2 /* Pods-iOS Interview Mark Boleigha.debug.xcconfig */,
+				AE774BA136D8944A72D86612 /* Pods-iOS Interview Mark Boleigha.release.xcconfig */,
+				5E3169DBAA2972651769E024 /* Pods-iOS Interview Mark BoleighaTests.debug.xcconfig */,
+				FD00EA3F67100C327DEB002B /* Pods-iOS Interview Mark BoleighaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DE1C11B327919FDC00C03E81 = {
 			isa = PBXGroup;
 			children = (
 				DE1C11BE27919FDC00C03E81 /* iOS Interview Mark Boleigha */,
 				DE1C11D827919FE500C03E81 /* iOS Interview Mark BoleighaTests */,
 				DE1C11BD27919FDC00C03E81 /* Products */,
+				37E5C4064310166B345D40FD /* Pods */,
+				37A556A2B156B6B1E01C1907 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,8 +136,6 @@
 				DE1C11E62791A1AA00C03E81 /* Views */,
 				DE1C11E82791A1C500C03E81 /* Utils */,
 				DE1C11BF27919FDC00C03E81 /* AppDelegate.swift */,
-				DE1C11C327919FDC00C03E81 /* ViewController.swift */,
-				DE1C11C527919FDC00C03E81 /* Main.storyboard */,
 				DE1C11CB27919FE500C03E81 /* Assets.xcassets */,
 				DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */,
 				DE1C11D027919FE500C03E81 /* Info.plist */,
@@ -114,6 +163,7 @@
 		DE1C11E52791A19900C03E81 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C11FC27952DBE00C03E81 /* Navigation Menu */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -121,6 +171,9 @@
 		DE1C11E62791A1AA00C03E81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C11EA279457C500C03E81 /* Main */,
+				DE1C11E9279457BE00C03E81 /* Authentication */,
+				DE1C11F927952CF100C03E81 /* SplashViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +181,7 @@
 		DE1C11E72791A1BC00C03E81 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C11EF2794873900C03E81 /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,8 +189,52 @@
 		DE1C11E82791A1C500C03E81 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C1200279547C300C03E81 /* Extensions */,
+				DE1C120327954CC400C03E81 /* Colors.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE1C11E9279457BE00C03E81 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C11EB279457DF00C03E81 /* LoginViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DE1C11EA279457C500C03E81 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C11ED2794585E00C03E81 /* TabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE1C11EF2794873900C03E81 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C11F02794880A00C03E81 /* Network.swift */,
+				DE1C11F327948C4100C03E81 /* Reachability.swift */,
+				DE1C11F627949C9400C03E81 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DE1C11FC27952DBE00C03E81 /* Navigation Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C11FD27952DD700C03E81 /* Navigation.swift */,
+			);
+			path = "Navigation Menu";
+			sourceTree = "<group>";
+		};
+		DE1C1200279547C300C03E81 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C1201279547D800C03E81 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE1C11DE27919FE500C03E81 /* Build configuration list for PBXNativeTarget "iOS Interview Mark Boleigha" */;
 			buildPhases = (
+				06BAA953AF8568318208B96A /* [CP] Check Pods Manifest.lock */,
 				DE1C11B827919FDC00C03E81 /* Sources */,
 				DE1C11B927919FDC00C03E81 /* Frameworks */,
 				DE1C11BA27919FDC00C03E81 /* Resources */,
+				1E3A3EFD9C8F456292EEA966 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE1C11E127919FE500C03E81 /* Build configuration list for PBXNativeTarget "iOS Interview Mark BoleighaTests" */;
 			buildPhases = (
+				D56A5E91E5A7A6481B8B0002 /* [CP] Check Pods Manifest.lock */,
 				DE1C11D127919FE500C03E81 /* Sources */,
 				DE1C11D227919FE500C03E81 /* Frameworks */,
 				DE1C11D327919FE500C03E81 /* Resources */,
@@ -222,7 +323,6 @@
 			files = (
 				DE1C11CF27919FE500C03E81 /* LaunchScreen.storyboard in Resources */,
 				DE1C11CC27919FE500C03E81 /* Assets.xcassets in Resources */,
-				DE1C11C727919FDC00C03E81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,14 +335,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06BAA953AF8568318208B96A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS Interview Mark Boleigha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E3A3EFD9C8F456292EEA966 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS Interview Mark Boleigha/Pods-iOS Interview Mark Boleigha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS Interview Mark Boleigha/Pods-iOS Interview Mark Boleigha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS Interview Mark Boleigha/Pods-iOS Interview Mark Boleigha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D56A5E91E5A7A6481B8B0002 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS Interview Mark BoleighaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DE1C11B827919FDC00C03E81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE1C11C427919FDC00C03E81 /* ViewController.swift in Sources */,
+				DE1C11F427948C4100C03E81 /* Reachability.swift in Sources */,
+				DE1C120427954CC400C03E81 /* Colors.swift in Sources */,
+				DE1C11EC279457DF00C03E81 /* LoginViewController.swift in Sources */,
+				DE1C1202279547D800C03E81 /* UIView+Extensions.swift in Sources */,
+				DE1C11F727949C9400C03E81 /* NetworkService.swift in Sources */,
+				DE1C11F12794880A00C03E81 /* Network.swift in Sources */,
 				DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */,
+				DE1C11EE2794585E00C03E81 /* TabBarController.swift in Sources */,
+				DE1C11FE27952DD700C03E81 /* Navigation.swift in Sources */,
 				DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */,
+				DE1C11FA27952CF100C03E81 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +422,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1C11F22794880A00C03E81 /* Network.swift in Sources */,
 				DE1C11DA27919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift in Sources */,
+				DE1C11F827949C9400C03E81 /* NetworkService.swift in Sources */,
+				DE1C11FF27952DD700C03E81 /* Navigation.swift in Sources */,
+				DE1C11F527948C4100C03E81 /* Reachability.swift in Sources */,
+				DE1C11FB27952CF100C03E81 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,14 +442,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DE1C11C527919FDC00C03E81 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE1C11C627919FDC00C03E81 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -400,6 +569,7 @@
 		};
 		DE1C11DF27919FE500C03E81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16F70DE83F48D0456C0073E2 /* Pods-iOS Interview Mark Boleigha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,6 +588,7 @@
 		};
 		DE1C11E027919FE500C03E81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE774BA136D8944A72D86612 /* Pods-iOS Interview Mark Boleigha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -436,6 +607,7 @@
 		};
 		DE1C11E227919FE500C03E81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E3169DBAA2972651769E024 /* Pods-iOS Interview Mark BoleighaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +630,7 @@
 		};
 		DE1C11E327919FE500C03E81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD00EA3F67100C327DEB002B /* Pods-iOS Interview Mark BoleighaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

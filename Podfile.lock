@@ -1,0 +1,56 @@
+PODS:
+  - Alamofire (5.4.3)
+  - IQKeyboardManagerSwift (6.5.6)
+  - lottie-ios (3.2.3)
+  - Signals (6.1.0)
+  - SwiftValidator (4.0.0)
+  - WidgetUI (1.0.10):
+    - lottie-ios
+
+DEPENDENCIES:
+  - Alamofire
+  - IQKeyboardManagerSwift (from `https://github.com/hackiftekhar/IQKeyboardManager.git`, tag `v6.5.6`)
+  - Signals
+  - SwiftValidator (from `https://github.com/quacklabs/SwiftValidator.git`, commit `06a3d4d`, branch `numeric_rule`)
+  - WidgetUI (from `https://github.com/quacklabs/WidgetUI.git`, commit `8128202`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - lottie-ios
+    - Signals
+
+EXTERNAL SOURCES:
+  IQKeyboardManagerSwift:
+    :git: https://github.com/hackiftekhar/IQKeyboardManager.git
+    :tag: v6.5.6
+  SwiftValidator:
+    :branch: numeric_rule
+    :commit: 06a3d4d
+    :git: https://github.com/quacklabs/SwiftValidator.git
+  WidgetUI:
+    :commit: '8128202'
+    :git: https://github.com/quacklabs/WidgetUI.git
+
+CHECKOUT OPTIONS:
+  IQKeyboardManagerSwift:
+    :git: https://github.com/hackiftekhar/IQKeyboardManager.git
+    :tag: v6.5.6
+  SwiftValidator:
+    :commit: 06a3d4d7a3614e0fee6ff856e3a52ac9c1695999
+    :git: https://github.com/quacklabs/SwiftValidator.git
+  WidgetUI:
+    :commit: '8128202'
+    :git: https://github.com/quacklabs/WidgetUI.git
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
+  SwiftValidator: 249b6b3ae3b294266c5b9de134d94f18f2d5aa47
+  WidgetUI: 47bb11a31db7d3a674dd1e2ae0b5261462792f40
+
+PODFILE CHECKSUM: 7c323e615d17af0ab3b798c9e2358f76578e0ca1
+
+COCOAPODS: 1.10.1
