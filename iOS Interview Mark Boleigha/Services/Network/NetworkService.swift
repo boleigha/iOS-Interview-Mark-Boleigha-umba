@@ -3,17 +3,33 @@
 //  iOS Interview Mark Boleigha
 //
 //  Created by Mark Boleigha on 16/01/2022.
-//  Copyright © 2022 Umba. All rights reserved.
 //
 
 import Foundation
 import Combine
+import Alamofire
 
-//protocol NetworkService {
-//    func fetch<T: Codable>(_ request: NetworkRequest) ->
-//    func fetchList<T: Codable>(_ request: NetworkRequest, completion: @escaping (NetworkResponse, _ data: T?) -> Void)
+protocol NetworkService {
+//    func request<T: Codable>(_ request: NetworkRequest) -> AnyPublisher<T, Error>
+    func request<T: Codable>(_ request: NetworkRequest, completion: @escaping (NetworkResponse, _ data: T?) -> Void)
 //    func push<T: Codable>(_ request: NetworkRequest, completion: @escaping (NetworkResponse, _ data: T?) -> Void)
-//}
+    func buildRequestHeaders(encoding: RequestEncoding, apiKey: String?) -> HTTPHeaders
+}
+
+struct NetworkRequest {
+    var endpoint: API
+    var method: HTTPMethod
+    var encoding: RequestEncoding
+    var body: Dictionary<String, Any>
+    var files: Dictionary<String, Data> = [:]
+    
+    init(endpoint: API, method: HTTPMethod,encoding: RequestEncoding? = .json, body: Dictionary<String, Any>) {
+        self.endpoint = endpoint
+        self.method = method
+        self.body = body
+        self.encoding = encoding!
+    }
+}
 
 enum NetworkResponse {
     case success

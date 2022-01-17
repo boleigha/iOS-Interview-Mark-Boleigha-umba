@@ -17,10 +17,11 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Do any additional setup after loading the view.
-        guard app.keystore.string(forKey: "API_KEY") != nil else {
+        guard app.keystore.string(forKey: "sess_id") != nil else {
             app.setRootViewController(controller: LoginViewController())
             return
         }
+        Navigation.setUpAsRootViewController()
     }
     
 

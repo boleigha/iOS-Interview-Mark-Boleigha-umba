@@ -3,16 +3,14 @@
 //  iOS Interview Mark Boleigha
 //
 //  Created by Mark Boleigha on 17/01/2022.
-//  Copyright © 2022 Umba. All rights reserved.
 //
 import UIKit
 
 class Navigation: UITabBarController {
     
-    private var circleView : UIView!
-    private var circleImageView: UIImageView!
-    private var circleViewCenter: NSLayoutConstraint!
-
+    private var menu: TabMenu!
+    private let menuItems: [MenuItem] = [.home, .latest, .popular, .upcoming]
+    
     class var shared: Navigation {
         struct Static {
             static let instance: Navigation = Navigation()
@@ -24,11 +22,34 @@ class Navigation: UITabBarController {
         super.viewDidLoad()
         tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = true
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = .white
         self.navigationController?.navigationBar.backgroundColor = .none
-//        self.createTabNavigationMenu()
+        self.createMenu()
     }
     
+    private func createMenu() {
+        let width = tabBar.frame.width - 20
+        let frame = CGRect(x: 0, y: 0, width: width, height: 0)
+        
+        // create custom tab menu
+        self.menu = TabMenu(frame: frame, tabMenuItems: self.menuItems)
+        self.menu.willSetConstraints()
+        self.menu.layer.cornerRadius = 8
+        
+        // Add it to the view
+        self.view.addSubview(self.menu)
+        self.menu.anchor(top: nil, leading: tabBar.leadingAnchor, bottom: self.view.bottomAnchor, trailing: tabBar.trailingAnchor, padding:UIEdgeInsets(top: 0, left: 10, bottom: 5, right: 10) )
+        self.menu.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        self.viewControllers = menuItems.map({ $0.viewController })
+        
+        self.menu.addShadow(color: UIColor.black, withOffset: CGSize(width: 0, height: -5))
+        self.menu.clipsToBounds = false
+        self.menu.activateTab(viewId: self.menu.activeTabIndex)
+        
+        self.menu.itemTapped.subscribe(with: self) { (item) in
+            self.selectedIndex = item
+        }
+    }
     
     static func setUpAsRootViewController(completion: (() -> Void)? = nil) {
         AppDelegate.shared.setRootViewController(controller: self.shared)
@@ -38,17 +59,3 @@ class Navigation: UITabBarController {
     }
 }
 
-//extension Navigation: TabMenuDelegate {
-//    func itemTapped(item: Int) {
-//        self.selectedIndex = item
-//
-//        let anchor = CGFloat(self.customTabBar.itemWidth * CGFloat(item)) + 20
-//        let tab = self.customTabBar.subviews[item] as! TabMenuItem
-//
-//        UIView.animate(withDuration: 0.5, animations: {
-//            self.circleImageView.image = tab.icon
-//            self.circleViewCenter.constant = anchor
-//            self.circleView.setNeedsDisplay()
-//        })
-//    }
-//}

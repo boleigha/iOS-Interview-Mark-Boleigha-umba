@@ -14,19 +14,22 @@
 		DE1C11CF27919FE500C03E81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */; };
 		DE1C11DA27919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */; };
 		DE1C11EC279457DF00C03E81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11EB279457DF00C03E81 /* LoginViewController.swift */; };
-		DE1C11EE2794585E00C03E81 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11ED2794585E00C03E81 /* TabBarController.swift */; };
-		DE1C11F12794880A00C03E81 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F02794880A00C03E81 /* Network.swift */; };
-		DE1C11F22794880A00C03E81 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F02794880A00C03E81 /* Network.swift */; };
+		DE1C11EE2794585E00C03E81 /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11ED2794585E00C03E81 /* TabMenu.swift */; };
 		DE1C11F427948C4100C03E81 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F327948C4100C03E81 /* Reachability.swift */; };
-		DE1C11F527948C4100C03E81 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F327948C4100C03E81 /* Reachability.swift */; };
 		DE1C11F727949C9400C03E81 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F627949C9400C03E81 /* NetworkService.swift */; };
-		DE1C11F827949C9400C03E81 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F627949C9400C03E81 /* NetworkService.swift */; };
 		DE1C11FA27952CF100C03E81 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F927952CF100C03E81 /* SplashViewController.swift */; };
-		DE1C11FB27952CF100C03E81 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F927952CF100C03E81 /* SplashViewController.swift */; };
 		DE1C11FE27952DD700C03E81 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11FD27952DD700C03E81 /* Navigation.swift */; };
-		DE1C11FF27952DD700C03E81 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11FD27952DD700C03E81 /* Navigation.swift */; };
 		DE1C1202279547D800C03E81 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C1201279547D800C03E81 /* UIView+Extensions.swift */; };
 		DE1C120427954CC400C03E81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C120327954CC400C03E81 /* Colors.swift */; };
+		DE1C120627958E5000C03E81 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C120527958E4F00C03E81 /* Request.swift */; };
+		DE1C120827958E8F00C03E81 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C120727958E8F00C03E81 /* API.swift */; };
+		DE1C120C2795911400C03E81 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C120B2795911400C03E81 /* AuthService.swift */; };
+		DE1C121027959A0B00C03E81 /* NetworkLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C120E27959A0A00C03E81 /* NetworkLayerTests.swift */; };
+		DE1C12122795A3DA00C03E81 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12112795A3D900C03E81 /* MockRequest.swift */; };
+		DE1C12152795A88A00C03E81 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12142795A88A00C03E81 /* LoginViewModel.swift */; };
+		DE1C12182795ADCF00C03E81 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12172795ADCE00C03E81 /* SessionResponse.swift */; };
+		DE1C121A2795BA1900C03E81 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12192795BA1900C03E81 /* MenuItem.swift */; };
+		DE1C121C2795BD6600C03E81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C121B2795BD6600C03E81 /* HomeViewController.swift */; };
 		E54409D8E9E02FE8FC4F17BB /* Pods_iOS_Interview_Mark_Boleigha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F12D77009D7F8AC989F364 /* Pods_iOS_Interview_Mark_Boleigha.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,14 +59,22 @@
 		DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Interview_Mark_BoleighaTests.swift; sourceTree = "<group>"; };
 		DE1C11DB27919FE500C03E81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE1C11EB279457DF00C03E81 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DE1C11ED2794585E00C03E81 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		DE1C11F02794880A00C03E81 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DE1C11ED2794585E00C03E81 /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
 		DE1C11F327948C4100C03E81 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		DE1C11F627949C9400C03E81 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DE1C11F927952CF100C03E81 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DE1C11FD27952DD700C03E81 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		DE1C1201279547D800C03E81 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		DE1C120327954CC400C03E81 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DE1C120527958E4F00C03E81 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		DE1C120727958E8F00C03E81 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DE1C120B2795911400C03E81 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DE1C120E27959A0A00C03E81 /* NetworkLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerTests.swift; sourceTree = "<group>"; };
+		DE1C12112795A3D900C03E81 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
+		DE1C12142795A88A00C03E81 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DE1C12172795ADCE00C03E81 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		DE1C12192795BA1900C03E81 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		DE1C121B2795BD6600C03E81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FD00EA3F67100C327DEB002B /* Pods-iOS Interview Mark BoleighaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; path = "Target Support Files/Pods-iOS Interview Mark BoleighaTests/Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +150,6 @@
 				DE1C11CB27919FE500C03E81 /* Assets.xcassets */,
 				DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */,
 				DE1C11D027919FE500C03E81 /* Info.plist */,
-				DE1C11C827919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld */,
 			);
 			path = "iOS Interview Mark Boleigha";
 			sourceTree = "<group>";
@@ -149,6 +159,8 @@
 			children = (
 				DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */,
 				DE1C11DB27919FE500C03E81 /* Info.plist */,
+				DE1C120E27959A0A00C03E81 /* NetworkLayerTests.swift */,
+				DE1C12112795A3D900C03E81 /* MockRequest.swift */,
 			);
 			path = "iOS Interview Mark BoleighaTests";
 			sourceTree = "<group>";
@@ -156,6 +168,8 @@
 		DE1C11E42791A18D00C03E81 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C12162795AD9F00C03E81 /* Data Models */,
+				DE1C11C827919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -163,6 +177,7 @@
 		DE1C11E52791A19900C03E81 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C12132795A86A00C03E81 /* ViewModels */,
 				DE1C11FC27952DBE00C03E81 /* Navigation Menu */,
 			);
 			path = Presentation;
@@ -206,7 +221,9 @@
 		DE1C11EA279457C500C03E81 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				DE1C11ED2794585E00C03E81 /* TabBarController.swift */,
+				DE1C11ED2794585E00C03E81 /* TabMenu.swift */,
+				DE1C12192795BA1900C03E81 /* MenuItem.swift */,
+				DE1C121B2795BD6600C03E81 /* HomeViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -214,9 +231,11 @@
 		DE1C11EF2794873900C03E81 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DE1C11F02794880A00C03E81 /* Network.swift */,
+				DE1C120A279590F500C03E81 /* API Routes */,
 				DE1C11F327948C4100C03E81 /* Reachability.swift */,
 				DE1C11F627949C9400C03E81 /* NetworkService.swift */,
+				DE1C120527958E4F00C03E81 /* Request.swift */,
+				DE1C120727958E8F00C03E81 /* API.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -235,6 +254,30 @@
 				DE1C1201279547D800C03E81 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE1C120A279590F500C03E81 /* API Routes */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C120B2795911400C03E81 /* AuthService.swift */,
+			);
+			path = "API Routes";
+			sourceTree = "<group>";
+		};
+		DE1C12132795A86A00C03E81 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C12142795A88A00C03E81 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DE1C12162795AD9F00C03E81 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C12172795ADCE00C03E81 /* SessionResponse.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,16 +448,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1C11F427948C4100C03E81 /* Reachability.swift in Sources */,
+				DE1C120627958E5000C03E81 /* Request.swift in Sources */,
 				DE1C120427954CC400C03E81 /* Colors.swift in Sources */,
+				DE1C121C2795BD6600C03E81 /* HomeViewController.swift in Sources */,
 				DE1C11EC279457DF00C03E81 /* LoginViewController.swift in Sources */,
 				DE1C1202279547D800C03E81 /* UIView+Extensions.swift in Sources */,
 				DE1C11F727949C9400C03E81 /* NetworkService.swift in Sources */,
-				DE1C11F12794880A00C03E81 /* Network.swift in Sources */,
+				DE1C12152795A88A00C03E81 /* LoginViewModel.swift in Sources */,
+				DE1C121A2795BA1900C03E81 /* MenuItem.swift in Sources */,
 				DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */,
-				DE1C11EE2794585E00C03E81 /* TabBarController.swift in Sources */,
+				DE1C120827958E8F00C03E81 /* API.swift in Sources */,
+				DE1C11EE2794585E00C03E81 /* TabMenu.swift in Sources */,
 				DE1C11FE27952DD700C03E81 /* Navigation.swift in Sources */,
+				DE1C12182795ADCF00C03E81 /* SessionResponse.swift in Sources */,
 				DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */,
 				DE1C11FA27952CF100C03E81 /* SplashViewController.swift in Sources */,
+				DE1C120C2795911400C03E81 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,12 +471,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE1C11F22794880A00C03E81 /* Network.swift in Sources */,
 				DE1C11DA27919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift in Sources */,
-				DE1C11F827949C9400C03E81 /* NetworkService.swift in Sources */,
-				DE1C11FF27952DD700C03E81 /* Navigation.swift in Sources */,
-				DE1C11F527948C4100C03E81 /* Reachability.swift in Sources */,
-				DE1C11FB27952CF100C03E81 /* SplashViewController.swift in Sources */,
+				DE1C121027959A0B00C03E81 /* NetworkLayerTests.swift in Sources */,
+				DE1C12122795A3DA00C03E81 /* MockRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
