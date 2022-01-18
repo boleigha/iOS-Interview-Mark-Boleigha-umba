@@ -16,7 +16,8 @@ class LoginViewController: UIViewController {
     let viewModel = LoginViewModel()
     
     lazy var titleHeader: Text = {
-        let txt = Text(font: Font.heading.make(withSize: 22), content: "Login".attributed)
+        let font = Font.heading.make(withSize: 22)
+        let txt = Text(font: font, content: "Login".attributed)
         txt.textColor = .white
         return txt
     }()

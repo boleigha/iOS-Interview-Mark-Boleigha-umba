@@ -30,6 +30,16 @@
 		DE1C12182795ADCF00C03E81 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12172795ADCE00C03E81 /* SessionResponse.swift */; };
 		DE1C121A2795BA1900C03E81 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12192795BA1900C03E81 /* MenuItem.swift */; };
 		DE1C121C2795BD6600C03E81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C121B2795BD6600C03E81 /* HomeViewController.swift */; };
+		DE1C121F2795F57100C03E81 /* ScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C121E2795F57100C03E81 /* ScrollableView.swift */; };
+		DE1C12232796002200C03E81 /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12222796002200C03E81 /* MoviesResponse.swift */; };
+		DE5BA2612796AFD9000850FA /* PopularMoviesCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA2602796AFD9000850FA /* PopularMoviesCarousel.swift */; };
+		DE5BA2702796B182000850FA /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5BA2652796B181000850FA /* Lato-LightItalic.ttf */; };
+		DE5BA2712796B182000850FA /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5BA2662796B181000850FA /* Lato-Bold.ttf */; };
+		DE5BA2722796B182000850FA /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5BA2672796B181000850FA /* Lato-Regular.ttf */; };
+		DE5BA2742796B182000850FA /* Lato-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5BA2692796B182000850FA /* Lato-RegularItalic.ttf */; };
+		DE5BA2762796B182000850FA /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5BA26B2796B182000850FA /* Lato-Light.ttf */; };
+		DE5BA27A2796DAA7000850FA /* LatestMovieCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA2792796DAA7000850FA /* LatestMovieCarousel.swift */; };
+		DE5BA27C2796DB3D000850FA /* UpcomingCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA27B2796DB3D000850FA /* UpcomingCarousel.swift */; };
 		E54409D8E9E02FE8FC4F17BB /* Pods_iOS_Interview_Mark_Boleigha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F12D77009D7F8AC989F364 /* Pods_iOS_Interview_Mark_Boleigha.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +85,16 @@
 		DE1C12172795ADCE00C03E81 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		DE1C12192795BA1900C03E81 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		DE1C121B2795BD6600C03E81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DE1C121E2795F57100C03E81 /* ScrollableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView.swift; sourceTree = "<group>"; };
+		DE1C12222796002200C03E81 /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
+		DE5BA2602796AFD9000850FA /* PopularMoviesCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesCarousel.swift; sourceTree = "<group>"; };
+		DE5BA2652796B181000850FA /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		DE5BA2662796B181000850FA /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		DE5BA2672796B181000850FA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		DE5BA2692796B182000850FA /* Lato-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-RegularItalic.ttf"; sourceTree = "<group>"; };
+		DE5BA26B2796B182000850FA /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "../../../../../../../../Applications/MAMP/Library/lib/ruby/2.3.0/rdoc/generator/template/darkfish/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
+		DE5BA2792796DAA7000850FA /* LatestMovieCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMovieCarousel.swift; sourceTree = "<group>"; };
+		DE5BA27B2796DB3D000850FA /* UpcomingCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCarousel.swift; sourceTree = "<group>"; };
 		FD00EA3F67100C327DEB002B /* Pods-iOS Interview Mark BoleighaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; path = "Target Support Files/Pods-iOS Interview Mark BoleighaTests/Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +224,8 @@
 		DE1C11E82791A1C500C03E81 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE5BA2622796B16B000850FA /* Fonts */,
+				DE1C121D2795F55600C03E81 /* CustomViews */,
 				DE1C1200279547C300C03E81 /* Extensions */,
 				DE1C120327954CC400C03E81 /* Colors.swift */,
 			);
@@ -221,9 +243,9 @@
 		DE1C11EA279457C500C03E81 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C122427966EF100C03E81 /* Home */,
 				DE1C11ED2794585E00C03E81 /* TabMenu.swift */,
 				DE1C12192795BA1900C03E81 /* MenuItem.swift */,
-				DE1C121B2795BD6600C03E81 /* HomeViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -276,8 +298,40 @@
 			isa = PBXGroup;
 			children = (
 				DE1C12172795ADCE00C03E81 /* SessionResponse.swift */,
+				DE1C12222796002200C03E81 /* MoviesResponse.swift */,
 			);
 			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		DE1C121D2795F55600C03E81 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C121E2795F57100C03E81 /* ScrollableView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		DE1C122427966EF100C03E81 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C121B2795BD6600C03E81 /* HomeViewController.swift */,
+				DE5BA2602796AFD9000850FA /* PopularMoviesCarousel.swift */,
+				DE5BA2792796DAA7000850FA /* LatestMovieCarousel.swift */,
+				DE5BA27B2796DB3D000850FA /* UpcomingCarousel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DE5BA2622796B16B000850FA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DE5BA2662796B181000850FA /* Lato-Bold.ttf */,
+				DE5BA26B2796B182000850FA /* Lato-Light.ttf */,
+				DE5BA2652796B181000850FA /* Lato-LightItalic.ttf */,
+				DE5BA2692796B182000850FA /* Lato-RegularItalic.ttf */,
+				DE5BA2672796B181000850FA /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +418,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5BA2712796B182000850FA /* Lato-Bold.ttf in Resources */,
+				DE5BA2702796B182000850FA /* Lato-LightItalic.ttf in Resources */,
+				DE5BA2762796B182000850FA /* Lato-Light.ttf in Resources */,
 				DE1C11CF27919FE500C03E81 /* LaunchScreen.storyboard in Resources */,
+				DE5BA2722796B182000850FA /* Lato-Regular.ttf in Resources */,
+				DE5BA2742796B182000850FA /* Lato-RegularItalic.ttf in Resources */,
 				DE1C11CC27919FE500C03E81 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1C11F427948C4100C03E81 /* Reachability.swift in Sources */,
+				DE1C121F2795F57100C03E81 /* ScrollableView.swift in Sources */,
 				DE1C120627958E5000C03E81 /* Request.swift in Sources */,
 				DE1C120427954CC400C03E81 /* Colors.swift in Sources */,
 				DE1C121C2795BD6600C03E81 /* HomeViewController.swift in Sources */,
@@ -462,7 +522,11 @@
 				DE1C11FE27952DD700C03E81 /* Navigation.swift in Sources */,
 				DE1C12182795ADCF00C03E81 /* SessionResponse.swift in Sources */,
 				DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */,
+				DE5BA27A2796DAA7000850FA /* LatestMovieCarousel.swift in Sources */,
+				DE1C12232796002200C03E81 /* MoviesResponse.swift in Sources */,
 				DE1C11FA27952CF100C03E81 /* SplashViewController.swift in Sources */,
+				DE5BA27C2796DB3D000850FA /* UpcomingCarousel.swift in Sources */,
+				DE5BA2612796AFD9000850FA /* PopularMoviesCarousel.swift in Sources */,
 				DE1C120C2795911400C03E81 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -97,7 +97,7 @@ class TabMenuItem: UIView {
     var controller: UIViewController?
     
     lazy var displayTitle: Text = {
-        let font = Font.heading.make(font: nil, withSize: 13)
+        let font = UIFont(name: "Lato-Regular", size: 11)
         return Text(font: font, content: nil, color: .white)
     }()
     var iconView: UIImageView = UIImageView(frame: .zero)

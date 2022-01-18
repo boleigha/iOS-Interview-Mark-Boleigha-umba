@@ -39,5 +39,11 @@
 	</array>
 	<key>API</key>
 	<string>1cc8f99171185fdfe945758ceefed132</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-Light.ttf</string>
+	</array>
 </dict>
 </plist>
