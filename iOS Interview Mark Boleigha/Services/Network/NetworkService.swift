@@ -10,9 +10,7 @@ import Combine
 import Alamofire
 
 protocol NetworkService {
-//    func request<T: Codable>(_ request: NetworkRequest) -> AnyPublisher<T, Error>
     func request<T: Codable>(_ request: NetworkRequest, completion: @escaping (NetworkResponse, _ data: T?) -> Void)
-//    func push<T: Codable>(_ request: NetworkRequest, completion: @escaping (NetworkResponse, _ data: T?) -> Void)
     func buildRequestHeaders(encoding: RequestEncoding, apiKey: String?) -> HTTPHeaders
 }
 
@@ -23,7 +21,7 @@ struct NetworkRequest {
     var body: Dictionary<String, Any>
     var files: Dictionary<String, Data> = [:]
     
-    init(endpoint: API, method: HTTPMethod,encoding: RequestEncoding? = .json, body: Dictionary<String, Any>) {
+    init(endpoint: API, method: HTTPMethod,encoding: RequestEncoding? = .urlJson, body: Dictionary<String, Any>) {
         self.endpoint = endpoint
         self.method = method
         self.body = body

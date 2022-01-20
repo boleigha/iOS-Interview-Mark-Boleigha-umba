@@ -1,0 +1,71 @@
+
+{
+    "get_latest" : {},
+    "movies" : {
+      "page": 1,
+      "results": [
+        {
+          "poster_path": "/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg",
+          "adult": false,
+          "overview": "From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.",
+          "release_date": "2016-08-03",
+          "genre_ids": [
+            14,
+            28,
+            80
+          ],
+          "id": 297761,
+          "original_title": "Suicide Squad",
+          "original_language": "en",
+          "title": "Suicide Squad",
+          "backdrop_path": "/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg",
+          "popularity": 48.261451,
+          "vote_count": 1466,
+          "video": false,
+          "vote_average": 5.91
+        },
+        {
+          "poster_path": "/lFSSLTlFozwpaGlO31OoUeirBgQ.jpg",
+          "adult": false,
+          "overview": "The most dangerous former operative of the CIA is drawn out of hiding to uncover hidden truths about his past.",
+          "release_date": "2016-07-27",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 324668,
+          "original_title": "Jason Bourne",
+          "original_language": "en",
+          "title": "Jason Bourne",
+          "backdrop_path": "/AoT2YrJUJlg5vKE3iMOLvHlTd3m.jpg",
+          "popularity": 30.690177,
+          "vote_count": 649,
+          "video": false,
+          "vote_average": 5.25
+        },
+        {
+          "poster_path": "/vOipe2myi26UDwP978hsYOrnUWC.jpg",
+          "adult": false,
+          "overview": "An orphan boy is raised in the Jungle with the help of a pack of wolves, a bear and a black panther.",
+          "release_date": "2016-04-07",
+          "genre_ids": [
+            12,
+            18,
+            14
+          ],
+          "id": 278927,
+          "original_title": "The Jungle Book",
+          "original_language": "en",
+          "title": "The Jungle Book",
+          "backdrop_path": "/eIOTsGg9FCVrBc4r2nXaV61JF4F.jpg",
+          "popularity": 21.104822,
+          "vote_count": 1085,
+          "video": false,
+          "vote_average": 6.42
+        }
+      ],
+      "total_results": 19629,
+      "total_pages": 982
+    },
+    
+}

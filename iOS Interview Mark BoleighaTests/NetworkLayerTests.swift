@@ -42,7 +42,6 @@ class NetworkLayerTests: XCTestCase {
         XCTAssertTrue(testURL.stringValue.contains("?api_key=\(api_key)"), "API key is being sent with request")
     }
     
-    
     func testURLContainsBase() {
         
     }

@@ -8,13 +8,10 @@
 
 import UIKit
 import WidgetUI
+import Signals
 
 class LatestMovieCarousel: UIView {
     
-//    lazy var title_label: UILabel = {
-//       let font = Font.body.make(withSize: 16
-//    }()
-
     lazy var title_label: Text = {
         let txt = Text()
         txt.font = Font.body.make(font: "Lato-Regular", withSize: 16)
@@ -22,27 +19,14 @@ class LatestMovieCarousel: UIView {
         txt.textColor = Colors.darkerBlue
         return txt
     }()
-    
-    lazy var see_all: Text = {
-        let txt = Text()
-        txt.font = Font.body.make(font: "Lato-Regular", withSize: 11)
-        txt.content = "See All >>>".attributed
-        txt.textColor = Colors.darkerBlue
-        return txt
+        
+    lazy var card: LatestMovieCard = {
+        let card = LatestMovieCard()
+        card.translatesAutoresizingMaskIntoConstraints = false
+        return card
     }()
     
-    lazy var items: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 16
-        let items = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        items.register(LatestMoviesCell.self, forCellWithReuseIdentifier: LatestMoviesCell.identifier)
-        items.translatesAutoresizingMaskIntoConstraints = false
-        items.isUserInteractionEnabled = true
-        return items
-    }()
-    
-    let category: HomeCategories = .latest
+    let clicked = Signal<LatestMovieResponse>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,59 +38,64 @@ class LatestMovieCarousel: UIView {
     }
     
     private func initView() {
-//        self.backgroundColor = .white
-        self.addSubviews([title_label, items, see_all])
-        items.delegate = self
-        items.dataSource = self
-        items.backgroundColor = UIColor(hex: "FFFFFF")
-        title_label.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 0))
-        items.anchor(top: title_label.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
-        items.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        self.addSubviews([title_label, card])
         
-        see_all.anchor(top: topAnchor, leading: nil, bottom: title_label.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 16))
+        title_label.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 0))
         
-        see_all.addGestureRecognizer(UITapGestureRecognizer(target: self, action: nil))
-    }
-}
-
-extension LatestMovieCarousel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        card.anchor(top: title_label.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10))
+        
+        card.layer.cornerRadius = 4
+        card.addShadow()
+        card.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selected)))
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LatestMoviesCell.identifier, for: indexPath) as? LatestMoviesCell else {
-            return UICollectionViewCell()
+    func render(with movie: LatestMovieResponse) {
+        card.movie = movie
+        card.title_label.content = movie.original_title.attributed
+        card.overview.content = movie.overview.attributed
+        card.rating.text = movie.vote_average.formattedAmount!
+        
+        if let backdrop = movie.backdrop_path {
+            let url = API.movies(.get_image(path: backdrop))
+            ImageLoader.loadImageData(urlString: url.stringValue) { (image) in
+                self.card.image.image = image
+            }
         }
-        return cell
+        card.setNeedsLayout()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = items.bounds.height - 12
-       return CGSize(width: 300, height: height)
+    @objc func selected() {
+        guard let movie = card.movie else {
+            return
+        }
+//        let movie = Movie(
+        self.clicked => movie
     }
 }
 
-
-class LatestMoviesCell: UICollectionViewCell {
+class LatestMovieCard: UIView {
     
-    static let identifier = "latest"
+    var movie: LatestMovieResponse?
     
-    lazy var cover: UIImageView = {
-        let icon = UIImageView()
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        return icon
+    lazy var image: UIImageView = {
+        return UIImageView()
     }()
     
-    lazy var title: UILabel = {
-        let font = Font.heading.make(font: "Lato-Light", withSize: 16)
+    lazy var title_label: Text = {
+        let font = Font.body.make(font: "Lato-Regular", withSize: 16)
         let txt = Text(font: font, content: nil)
         txt.textColor = .white
-        txt.numberOfLines = 0
-        txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
-//
+    
+    lazy var overview: Text = {
+        let font = Font.body.make(font: "Lato-Regular", withSize: 11)
+        let txt = Text(font: font, content: nil)
+        txt.numberOfLines = 0
+        txt.textColor = .white
+        return txt
+    }()
+    
     lazy var rating: UILabel = {
         let font = Font.body.make(font: "Lato-Light", withSize: 14)
         let txt = Text(font: font, content: nil)
@@ -121,33 +110,37 @@ class LatestMoviesCell: UICollectionViewCell {
         return img
     }()
     
-    var movie: MovieResponse!
-    
     override init(frame: CGRect) {
-         super.init(frame: frame)
-         initView()
-    }
-     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        super.init(frame: frame)
+        initView()
     }
     
-    func initView() {
-        self.backgroundColor = UIColor(hex: "333333")
-        self.addSubviews([cover, title, star, rating])
-        self.layer.cornerRadius = 2
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func initView() {
+        let backdrop = UIView()
+        backdrop.backgroundColor = UIColor(hex: "333333").withAlphaComponent(0.7)
+        backdrop.addSubviews([title_label, overview])
         
-        cover.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
-        title.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, padding: UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 5))
-        star.anchor(top: nil, leading: nil, bottom: bottomAnchor, trailing: nil, padding: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 5))
-        rating.anchor(top: nil, leading: star.trailingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 10))
+        self.addSubviews([image, backdrop, star, rating])
+        
+        image.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
+        
+        backdrop.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
+        backdrop.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        overview.anchor(top: title_label.bottomAnchor, leading: leadingAnchor, bottom: backdrop.bottomAnchor, trailing: backdrop.trailingAnchor, padding: UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8))
+        overview.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        title_label.anchor(top: backdrop.topAnchor, leading: backdrop.leadingAnchor, bottom: overview.topAnchor, trailing: backdrop.trailingAnchor, padding: UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8))
+        
+        star.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 5))
+        rating.anchor(top: topAnchor, leading: star.trailingAnchor, bottom: nil, trailing: trailingAnchor, padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 10))
         
         star.heightAnchor.constraint(equalToConstant: 20).isActive = true
         star.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        self.addShadow()
-        
-        title.text = "Title"
-        rating.text = "5.0"
+        self.bringSubviewToFront(backdrop)
+        self.backgroundColor = .green
     }
 }

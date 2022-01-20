@@ -58,7 +58,7 @@ class HTTP {
     }
     
     func request<T>(_ request: NetworkRequest, completion: @escaping (NetworkResponse, T?) -> Void) where T : Decodable, T : Encodable {
-        self.service.request(request) { (response, data) in
+        self.service.request(request) { (response, _ data: T?) in
             completion(response, data)
         }
     }
@@ -83,7 +83,6 @@ class Network: NetworkService {
         let headers = buildRequestHeaders(encoding: request.encoding)
         
         RequestManager.shared.request(request.endpoint.url!, method: request.method, parameters: request.body, encoding: request.encoding.get, headers: headers).response { response in
-            print("network response: \(response.debugDescription)")
             self.response(response) { (status, _ response: T?) in
                 completion(status, response)
             }

@@ -7,6 +7,7 @@
 
 import UIKit
 //import Scra
+import Signals
 
 enum HomeCategories {
     case popular, upcoming, latest
@@ -30,6 +31,16 @@ class HomeViewController: ScrollableView {
     }()
     
     var scrollViewConstraint: NSLayoutConstraint!
+    var viewModel: HomeViewModel!
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +53,33 @@ class HomeViewController: ScrollableView {
         popularView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         latestView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         upcomingView.heightAnchor.constraint(greaterThanOrEqualToConstant: 500).isActive = true
+        
+        popularView.items.dataSource = viewModel
+        upcomingView.items.dataSource = viewModel
+        
+        upcomingView.see_all.onTouchUpInside.subscribe(with: self) {
+            Navigation.select(item: 3)
+        }
+        
+        popularView.see_all.onTouchUpInside.subscribe(with: self) {
+            Navigation.select(item: 2)
+        }
+        
+        latestView.clicked.subscribe(with: self) { (movie) in
+            let view = MovieDetailViewController(movie: movie)
+            self.navigationController?.pushViewController(view, animated: true)
+        }
+        
+        upcomingView.clicked.subscribe(with: self) { (movie) in
+            let view = MovieDetailViewController(movie: movie)
+            self.navigationController?.pushViewController(view, animated: true)
+        }
+        
+        popularView.clicked.subscribe(with: self) { (movie) in
+            let view = MovieDetailViewController(movie: movie)
+            self.navigationController?.pushViewController(view, animated: true)
+        }
+        loadMovies()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +95,30 @@ class HomeViewController: ScrollableView {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         upcomingView.items.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 70, right: 5)
-        latestView.items.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        popularView.items.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func loadMovies() {
+        viewModel.loadVideos(category: .latest) { [weak self] in
+            guard let self_ = self, let latest = self_.viewModel.latest else {
+                return
+            }
+            self_.latestView.render(with: latest)
+        }
+        
+        viewModel.loadVideos(category: .popular) { [weak self] in
+            guard let self_ = self else {
+                return
+            }
+            self_.popularView.items.reloadData()
+        }
+        
+        viewModel.loadVideos(category: .upcoming) { [weak self] in
+            guard let self_ = self else {
+                return
+            }
+            self_.upcomingView.items.reloadData()
+        }
     }
 
 }

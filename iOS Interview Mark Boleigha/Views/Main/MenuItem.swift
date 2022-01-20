@@ -15,11 +15,16 @@ enum MenuItem: String, CaseIterable {
     case upcoming
     
     var viewController: UIViewController {
+        let viewModel = HomeViewModel()
         switch self {
         case .home:
-            return HomeViewController().wrapInNavigation()
-        default:
-            return UIViewController()
+            return HomeViewController(viewModel: viewModel).wrapInNavigation()
+        case .latest:
+            return LatestViewController(viewModel: viewModel).wrapInNavigation()
+        case .upcoming:
+            return UpcomingViewController(viewModel: viewModel).wrapInNavigation()
+        case .popular:
+            return PopularViewController(viewModel: viewModel).wrapInNavigation()
         }
     }
     

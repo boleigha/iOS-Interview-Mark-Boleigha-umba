@@ -51,6 +51,10 @@ class Navigation: UITabBarController {
         }
     }
     
+    static func select(item: Int) {
+        self.shared.menu.switchTab(to: item)
+    }
+    
     static func setUpAsRootViewController(completion: (() -> Void)? = nil) {
         AppDelegate.shared.setRootViewController(controller: self.shared)
         if completion != nil {

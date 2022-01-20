@@ -13,12 +13,19 @@ protocol Endpoint {
     var stringValue: String { get }
 }
 
+protocol EndpointKind {
+    
+}
+
 enum API {
     case auth(AuthService)
+    case movies(MovieDBService)
     
     var url: URL? {
         switch self {
         case .auth(let route):
+            return route.url
+        case .movies(let route):
             return route.url
         }
     }
@@ -26,6 +33,8 @@ enum API {
     var stringValue: String {
         switch self {
         case .auth(let route):
+            return route.stringValue
+        case .movies(let route):
             return route.stringValue
         }
     }

@@ -8,12 +8,9 @@
 
 import Foundation
 import WidgetUI
+import Signals
 
 class UpcomingCarousel: UIView {
-    
-//    lazy var title_label: UILabel = {
-//       let font = Font.body.make(withSize: 16
-//    }()
 
     lazy var title_label: Text = {
         let txt = Text()
@@ -23,12 +20,13 @@ class UpcomingCarousel: UIView {
         return txt
     }()
     
-    lazy var see_all: Text = {
-        let txt = Text()
-        txt.font = Font.body.make(font: "Lato-Regular", withSize: 11)
-        txt.content = "See All >>>".attributed
-        txt.textColor = Colors.darkerBlue
-        return txt
+    lazy var see_all: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("See All >>>", for: .normal)
+        btn.titleLabel?.font = Font.body.make(font: "Lato-Regular", withSize: 11)
+        btn.setTitleColor(.black, for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
     lazy var items: UICollectionView = {
@@ -39,10 +37,11 @@ class UpcomingCarousel: UIView {
         items.register(UpcomingMoviesCell.self, forCellWithReuseIdentifier: UpcomingMoviesCell.identifier)
         items.translatesAutoresizingMaskIntoConstraints = false
         items.isUserInteractionEnabled = true
+        items.tag = 1
         return items
     }()
     
-    let category: HomeCategories = .upcoming
+    let clicked = Signal<MovieResponse>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,32 +55,30 @@ class UpcomingCarousel: UIView {
     private func initView() {
         self.addSubviews([title_label, items, see_all])
         items.delegate = self
-        items.dataSource = self
         items.backgroundColor = UIColor(hex: "#ffffff")
         title_label.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 0))
         items.anchor(top: title_label.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
         
         see_all.anchor(top: topAnchor, leading: nil, bottom: title_label.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 16))
+//        see_all.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        see_all.widthAnchor.constraint(equalToConstant: 60).isActive = true
         
-        see_all.addGestureRecognizer(UITapGestureRecognizer(target: self, action: nil))
     }
 }
 
-extension UpcomingCarousel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UpcomingMoviesCell.identifier, for: indexPath) as? UpcomingMoviesCell else {
-            return UICollectionViewCell()
+extension UpcomingCarousel: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+   
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? UpcomingMoviesCell else {
+            return
         }
-        return cell
+        self.clicked => cell.movie
+//        let movie = v
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        let height = items.bounds.height - 12
-        let width = CGFloat(items.bounds.width - 26) / 2
+        let width = CGFloat(UIScreen.main.bounds.width - 26) / 2
        return CGSize(width: width, height: 200)
     }
 }
@@ -95,58 +92,86 @@ class UpcomingMoviesCell: UICollectionViewCell {
         icon.translatesAutoresizingMaskIntoConstraints = false
         return icon
     }()
-    
+        
     lazy var title: UILabel = {
-        let font = Font.heading.make(font: "Lato-Light", withSize: 16)
+        let font = Font.heading.make(font: "Lato-Regular", withSize: 16)
         let txt = Text(font: font, content: nil)
         txt.textColor = .white
         txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
-//
+    //
     lazy var rating: UILabel = {
-        let font = Font.body.make(font: "Lato-Light", withSize: 14)
+        let font = Font.body.make(font: "Lato-Regular", withSize: 14)
         let txt = Text(font: font, content: nil)
         txt.textColor = .white
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
-    
+        
     lazy var star: UIImageView = {
         let img = UIImageView(image: UIImage(named: "star"))
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
+        
     var movie: MovieResponse!
     
     override init(frame: CGRect) {
          super.init(frame: frame)
          initView()
     }
-     
+         
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+        
     func initView() {
+        let backdrop = UIView()
+        backdrop.backgroundColor = UIColor(hex: "333333").withAlphaComponent(0.7)
+        backdrop.addSubviews([title, star, rating])
+        
         self.backgroundColor = UIColor(hex: "333333")
-        self.addSubviews([cover, title, star, rating])
+        self.addSubviews([cover, backdrop])
         self.layer.cornerRadius = 2
         
+        backdrop.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
+        backdrop.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
         cover.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
-        title.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, padding: UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 5))
-        star.anchor(top: nil, leading: nil, bottom: bottomAnchor, trailing: nil, padding: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 5))
-        rating.anchor(top: nil, leading: star.trailingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 10))
+        
+        title.anchor(top: backdrop.topAnchor, leading: backdrop.leadingAnchor, bottom: backdrop.bottomAnchor, trailing: star.leadingAnchor, padding: UIEdgeInsets(top: 4, left: 10, bottom: 10, right: 5))
+        star.anchor(top: nil, leading: nil, bottom: backdrop.bottomAnchor, trailing: rating.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 5))
+        
+        rating.anchor(top: nil, leading: star.trailingAnchor, bottom: backdrop.bottomAnchor, trailing: backdrop.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 10))
+        rating.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        rating.heightAnchor.constraint(equalToConstant: 22).isActive = true
         
         star.heightAnchor.constraint(equalToConstant: 20).isActive = true
         star.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         self.addShadow()
+    }
         
-        title.text = "Title"
-        rating.text = "5.0"
+    func render() {
+        self.title.text = self.movie.original_title
+        self.rating.text = self.movie.vote_average.formattedAmount
+        
+        self.title.sizeToFit()
+        self.rating.sizeToFit()
+        guard let poster = movie.poster_path else {
+            return
+        }
+        if poster != "" {
+            let url = API.movies(.get_image(path: poster))
+            ImageLoader.loadImageData(urlString: url.stringValue) { (image) in
+                self.cover.image = image
+            }
+        }
+        
+        
     }
 }
 
