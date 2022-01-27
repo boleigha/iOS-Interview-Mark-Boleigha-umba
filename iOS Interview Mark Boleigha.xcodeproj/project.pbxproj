@@ -14,7 +14,6 @@
 		DE1C11CF27919FE500C03E81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1C11CD27919FE500C03E81 /* LaunchScreen.storyboard */; };
 		DE1C11DA27919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */; };
 		DE1C11EC279457DF00C03E81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11EB279457DF00C03E81 /* LoginViewController.swift */; };
-		DE1C11EE2794585E00C03E81 /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11ED2794585E00C03E81 /* TabMenu.swift */; };
 		DE1C11F427948C4100C03E81 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F327948C4100C03E81 /* Reachability.swift */; };
 		DE1C11F727949C9400C03E81 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F627949C9400C03E81 /* NetworkService.swift */; };
 		DE1C11FA27952CF100C03E81 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C11F927952CF100C03E81 /* SplashViewController.swift */; };
@@ -28,7 +27,6 @@
 		DE1C12122795A3DA00C03E81 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12112795A3D900C03E81 /* MockRequest.swift */; };
 		DE1C12152795A88A00C03E81 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12142795A88A00C03E81 /* LoginViewModel.swift */; };
 		DE1C12182795ADCF00C03E81 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12172795ADCE00C03E81 /* SessionResponse.swift */; };
-		DE1C121A2795BA1900C03E81 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12192795BA1900C03E81 /* MenuItem.swift */; };
 		DE1C121C2795BD6600C03E81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C121B2795BD6600C03E81 /* HomeViewController.swift */; };
 		DE1C121F2795F57100C03E81 /* ScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C121E2795F57100C03E81 /* ScrollableView.swift */; };
 		DE1C12232796002200C03E81 /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C12222796002200C03E81 /* MoviesResponse.swift */; };
@@ -53,6 +51,9 @@
 		DE5BA29927984107000850FA /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA29827984107000850FA /* UpcomingViewController.swift */; };
 		DE5BA29C27984173000850FA /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA29B27984173000850FA /* PopularViewController.swift */; };
 		DE5BA29F27984990000850FA /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA29E27984990000850FA /* MovieDetailViewController.swift */; };
+		DE5BA2A227994D74000850FA /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA2A127994D74000850FA /* TabMenu.swift */; };
+		DE5BA2A427994DAA000850FA /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5BA2A327994DAA000850FA /* MenuItem.swift */; };
+		DE72D2CA27A2EF9B008C4925 /* Latest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE72D2C927A2EF9B008C4925 /* Latest.swift */; };
 		E54409D8E9E02FE8FC4F17BB /* Pods_iOS_Interview_Mark_Boleigha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F12D77009D7F8AC989F364 /* Pods_iOS_Interview_Mark_Boleigha.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +83,6 @@
 		DE1C11D927919FE500C03E81 /* iOS_Interview_Mark_BoleighaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Interview_Mark_BoleighaTests.swift; sourceTree = "<group>"; };
 		DE1C11DB27919FE500C03E81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE1C11EB279457DF00C03E81 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DE1C11ED2794585E00C03E81 /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
 		DE1C11F327948C4100C03E81 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		DE1C11F627949C9400C03E81 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DE1C11F927952CF100C03E81 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +96,6 @@
 		DE1C12112795A3D900C03E81 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		DE1C12142795A88A00C03E81 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DE1C12172795ADCE00C03E81 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
-		DE1C12192795BA1900C03E81 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		DE1C121B2795BD6600C03E81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE1C121E2795F57100C03E81 /* ScrollableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableView.swift; sourceTree = "<group>"; };
 		DE1C12222796002200C03E81 /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
@@ -121,6 +120,9 @@
 		DE5BA29827984107000850FA /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		DE5BA29B27984173000850FA /* PopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		DE5BA29E27984990000850FA /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		DE5BA2A127994D74000850FA /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
+		DE5BA2A327994DAA000850FA /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		DE72D2C927A2EF9B008C4925 /* Latest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Latest.swift; sourceTree = "<group>"; };
 		FD00EA3F67100C327DEB002B /* Pods-iOS Interview Mark BoleighaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; path = "Target Support Files/Pods-iOS Interview Mark BoleighaTests/Pods-iOS Interview Mark BoleighaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +236,7 @@
 		DE1C11E62791A1AA00C03E81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE5BA2A027994D59000850FA /* Nav */,
 				DE1C11EA279457C500C03E81 /* Main */,
 				DE1C11E9279457BE00C03E81 /* Authentication */,
 				DE1C11F927952CF100C03E81 /* SplashViewController.swift */,
@@ -277,8 +280,6 @@
 				DE5BA297279840DE000850FA /* Upcoming */,
 				DE5BA29427983EC7000850FA /* Latest */,
 				DE1C122427966EF100C03E81 /* Home */,
-				DE1C11ED2794585E00C03E81 /* TabMenu.swift */,
-				DE1C12192795BA1900C03E81 /* MenuItem.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -338,6 +339,7 @@
 			children = (
 				DE1C12172795ADCE00C03E81 /* SessionResponse.swift */,
 				DE1C12222796002200C03E81 /* MoviesResponse.swift */,
+				DE72D2C927A2EF9B008C4925 /* Latest.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -403,6 +405,15 @@
 				DE5BA29E27984990000850FA /* MovieDetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		DE5BA2A027994D59000850FA /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				DE5BA2A127994D74000850FA /* TabMenu.swift */,
+				DE5BA2A327994DAA000850FA /* MenuItem.swift */,
+			);
+			path = Nav;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,11 +601,9 @@
 				DE1C11F727949C9400C03E81 /* NetworkService.swift in Sources */,
 				DE1C12152795A88A00C03E81 /* LoginViewModel.swift in Sources */,
 				DE5BA2822797180A000850FA /* KeyedDecodingContainer+Extension.swift in Sources */,
-				DE1C121A2795BA1900C03E81 /* MenuItem.swift in Sources */,
 				DE1C11C027919FDC00C03E81 /* AppDelegate.swift in Sources */,
 				DE5BA28427973B69000850FA /* UIImage+Extension.swift in Sources */,
 				DE1C120827958E8F00C03E81 /* API.swift in Sources */,
-				DE1C11EE2794585E00C03E81 /* TabMenu.swift in Sources */,
 				DE1C11FE27952DD700C03E81 /* Navigation.swift in Sources */,
 				DE1C12182795ADCF00C03E81 /* SessionResponse.swift in Sources */,
 				DE1C11CA27919FDC00C03E81 /* iOS_Interview_Mark_Boleigha.xcdatamodeld in Sources */,
@@ -607,10 +616,13 @@
 				DE5BA29127977551000850FA /* Codable+Extensions.swift in Sources */,
 				DE5BA2612796AFD9000850FA /* PopularMoviesCarousel.swift in Sources */,
 				DE5BA2802796F6FF000850FA /* MovieDBService.swift in Sources */,
+				DE72D2CA27A2EF9B008C4925 /* Latest.swift in Sources */,
 				DE1C120C2795911400C03E81 /* AuthService.swift in Sources */,
 				DE5BA29927984107000850FA /* UpcomingViewController.swift in Sources */,
 				DE5BA29F27984990000850FA /* MovieDetailViewController.swift in Sources */,
+				DE5BA2A427994DAA000850FA /* MenuItem.swift in Sources */,
 				DE5BA29627983EE3000850FA /* LatestViewController.swift in Sources */,
+				DE5BA2A227994D74000850FA /* TabMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

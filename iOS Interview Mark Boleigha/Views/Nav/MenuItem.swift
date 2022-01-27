@@ -1,10 +1,10 @@
 //
-//  TabMenuItem.swift
+//  MenuItem.swift
 //  iOS Interview Mark Boleigha
 //
-//  Created by Mark Boleigha on 17/01/2022.
+//  Created by Mark Boleigha on 20/01/2022.
+//  Copyright © 2022 Umba. All rights reserved.
 //
-
 import UIKit
 import WidgetUI
 

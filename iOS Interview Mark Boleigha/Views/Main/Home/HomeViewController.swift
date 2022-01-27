@@ -34,7 +34,7 @@ class HomeViewController: ScrollableView {
     var viewModel: HomeViewModel!
     
     init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     

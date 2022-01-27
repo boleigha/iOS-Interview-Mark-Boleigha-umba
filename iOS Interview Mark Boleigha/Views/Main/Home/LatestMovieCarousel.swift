@@ -26,7 +26,7 @@ class LatestMovieCarousel: UIView {
         return card
     }()
     
-    let clicked = Signal<LatestMovieResponse>()
+    let clicked = Signal<Latest>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +49,7 @@ class LatestMovieCarousel: UIView {
         card.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selected)))
     }
     
-    func render(with movie: LatestMovieResponse) {
+    func render(with movie: Latest) {
         card.movie = movie
         card.title_label.content = movie.original_title.attributed
         card.overview.content = movie.overview.attributed
@@ -75,7 +75,7 @@ class LatestMovieCarousel: UIView {
 
 class LatestMovieCard: UIView {
     
-    var movie: LatestMovieResponse?
+    var movie: Latest?
     
     lazy var image: UIImageView = {
         return UIImageView()

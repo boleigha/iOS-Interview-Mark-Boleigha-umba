@@ -14,12 +14,31 @@ class HomeViewModel: NSObject {
     var network: HTTP!
     var popular: [MovieResponse] = [MovieResponse]()
     var upcoming: [MovieResponse] = [MovieResponse]()
-    var latest: LatestMovieResponse?
+    var latest: Latest?
     
     // Injected for testability
     override init() {
         super.init()
         network = HTTP.shared
+    }
+    
+    func loadLocal() {
+        let context = AppDelegate.shared.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Movies")
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.returnsObjectsAsFaults = false
+
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+               print(data.value(forKey: "username") as! String)
+            }
+            
+        } catch {
+            
+            print("Failed")
+        }
     }
     
     func loadVideos(category: HomeCategories, completion: @escaping () -> Void) {
@@ -55,9 +74,9 @@ class HomeViewModel: NSObject {
         }
     }
     
-    private func loadLatest(completion: @escaping (LatestMovieResponse?) -> Void) {
+    private func loadLatest(completion: @escaping (Latest?) -> Void) {
         let request = NetworkRequest(endpoint: .movies(.latest), method: .get, encoding: .url, body: [:])
-        network.request(request) { (status, _ data: LatestMovieResponse?) in
+        network.request(request) { (status, _ data: Latest?) in
             guard let latest = data else {
                 completion(nil)
                 return

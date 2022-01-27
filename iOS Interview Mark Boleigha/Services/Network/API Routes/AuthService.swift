@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-enum AuthService: Endpoint {
+enum AuthService: CaseIterable, Endpoint {
     
     case request_token
     case guest_login
