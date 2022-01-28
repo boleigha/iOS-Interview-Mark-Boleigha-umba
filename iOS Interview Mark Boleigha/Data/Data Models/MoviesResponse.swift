@@ -19,31 +19,29 @@ extension CodingUserInfoKey {
 }
 
 protocol Movie: Codable {
+    var id: Int { get set }
     var adult: Bool { get set}
     var original_title: String { get set }
     var overview: String { get set }
-    var vote_average: Decimal { get set }
+    var vote_average: Double { get set }
     var backdrop_path: String? { get set }
     var poster_path: String? { get set }
+    var category: String? { get set }
 }
 
 
-class MoviesResponse: NSManagedObject, Codable {
+struct MoviesResponse: Codable {
     var page: Int!
     var results: [MovieResponse]!
     var total_pages: Int! //1000,
     var total_results: Int! //20000
     
+    
     enum CodingKeys: String, CodingKey {
         case page, results, total_pages, total_results
     }
     
-    required convenience init(from decoder: Decoder) throws {
-        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
-          throw DecoderConfigurationError.missingManagedObjectContext
-        }
-
-        self.init(context: context)
+    init(from decoder: Decoder) throws {
         
         let values = try! decoder.container(keyedBy: CodingKeys.self)
         
@@ -62,30 +60,24 @@ class MoviesResponse: NSManagedObject, Codable {
     }
 }
 
-//@objc(MovieResponse)
-class MovieResponse: NSManagedObject, Movie, Codable {
+class MovieResponse: NSManagedObject, Codable, Movie {
+    
+    @NSManaged dynamic var id: Int
     @NSManaged dynamic var adult: Bool
-    @NSManaged dynamic var backdrop_path: String? // "/cXwvuCQIaSLGlAR4tGEWZKITDGw.jpg",
-    @NSManaged dynamic var genre_ids: [Int]!
-    @NSManaged dynamic var id: Int //844398,
-    @NSManaged dynamic var original_language: String //"en",
-    @NSManaged dynamic var original_title: String //"Shattered",
-    @NSManaged dynamic var poster_path: String? //"/bkMhuIYybOmw0rdIKPzsDs4n7ez.jpg",
-    @NSManaged dynamic var vote_count: Int //7,
-    @NSManaged dynamic var video: Bool //false,
-    @NSManaged dynamic var vote_average: Decimal //7.4,
-    @NSManaged dynamic var title: String! //"Shattered",
-    @NSManaged dynamic var overview: String //"Chris, a wealthy divorcee, lives in a high-tech house of his own design in Montana. His life changes when he meets Sky, a mysterious young woman who draws him out of his shell and moves in after Chris is injured.",
-    @NSManaged dynamic var release_date: String //"2022-01-14",
-    @NSManaged dynamic var popularity: Float //77.972,
-    @NSManaged dynamic var media_type: String? //"movie"
+    @NSManaged dynamic var original_title: String
+    @NSManaged dynamic var overview: String
+    @NSManaged dynamic var backdrop_path: String?
+    @NSManaged dynamic var poster_path: String?
+    @NSManaged dynamic var vote_average: Double
+    @NSManaged dynamic var category: String?
     
     enum CodingKeys: String, CodingKey {
-        case adult, backdrop_path, genre_ids, id, original_language, original_title
+        case adult, backdrop_path, id, original_language, original_title, category
         case poster_path, vote_count, video, vote_average, title, overview, release_date, popularity, media_type
     }
     
     required convenience init(from decoder: Decoder) throws {
+        
         guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
           throw DecoderConfigurationError.missingManagedObjectContext
         }
@@ -94,38 +86,36 @@ class MovieResponse: NSManagedObject, Movie, Codable {
             throw DecoderConfigurationError.noEntity
         }
 
-//        self.init(entity: entity, insertInto: context)
-//        self.init(from: context)
         self.init(entity: entity, insertInto: context)
         
         let values = try! decoder.container(keyedBy: CodingKeys.self)
-        
-        adult = try values.decode(Bool.self, forKey: .adult)
-        backdrop_path = try values.decodeIfPresent(String.self, forKey: .backdrop_path)
-        genre_ids = try values.decode([Int].self, forKey: .genre_ids)
+        print("values: \(values)")
         id = try values.decode(Int.self, forKey: .id)
+        adult = try values.decode(Bool.self, forKey: .adult)
         original_title = try values.decode(String.self, forKey: .original_title)
-        original_language = try values.decode(String.self, forKey: .original_language)
         poster_path = try values.decodeIfPresent(String.self, forKey: .poster_path)
-        vote_count = try values.decode(Int.self, forKey: .vote_count)
-        vote_average = try values.decode(Decimal.self, forKey: .vote_average)
-        title = try values.decode(String.self, forKey: .title)
+        backdrop_path = try values.decodeIfPresent(String.self, forKey: .backdrop_path)
         overview = try values.decode(String.self, forKey: .overview)
-        release_date = try values.decode(String.self, forKey: .release_date)
-        popularity = try values.decode(Float.self, forKey: .popularity)
-        media_type = try values.decodeIfPresent(String.self, forKey: .media_type)
-        video = try values.decode(Bool.self, forKey: .video)
+        vote_average = try values.decode(Double.self, forKey: .vote_average)
+        category = try values.decodeIfPresent(String.self, forKey: .category)
+        
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(adult, forKey: .adult)
         try container.encode(backdrop_path, forKey: .backdrop_path)
-        try container.encode(genre_ids, forKey: .genre_ids)
         try container.encode(id, forKey: .id)
         try container.encode(original_title, forKey: .original_title)
-        try container.encode(original_language, forKey: .original_language)
+        try container.encode(poster_path, forKey: .poster_path)
+        try container.encode(overview, forKey: .overview)
+        try container.encode(vote_average, forKey: .vote_average)
+        try container.encodeIfPresent(category, forKey: .category)
     }
+//    
+//    @nonobjc public class func fetchRequest() -> NSFetchRequest<MovieResponse> {
+//        return NSFetchRequest<MovieResponse>(entityName: "MovieResponse")
+//    }
 }
 
 struct Genre: Codable {

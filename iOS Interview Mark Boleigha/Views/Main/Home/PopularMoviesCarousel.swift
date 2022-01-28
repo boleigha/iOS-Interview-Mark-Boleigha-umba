@@ -41,7 +41,17 @@ class PopularContentView: UIView {
         return items
     }()
     
+    lazy var retry_btn: UIButton = {
+        let btn = UIButton(frame: .zero)
+        btn.setTitle("Retry", for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.titleLabel?.font = Font.body.make(font: "Lato-Regular", withSize: 15)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
     let clicked = Signal<MovieResponse>()
+    let retry = Signal<()>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,16 +63,32 @@ class PopularContentView: UIView {
     }
     
     private func initView() {
-        self.addSubviews([title_label, items, see_all])
+        self.addSubviews([title_label, items, see_all, retry_btn])
         items.delegate = self
-//        items.dataSource = self
         items.backgroundColor = UIColor(hex: "ffffff")
         title_label.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 0))
         items.anchor(top: title_label.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
         
         see_all.anchor(top: topAnchor, leading: nil, bottom: title_label.bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 16))
-//        see_all.heightAnchor.constraint(equalToConstant: 18).isActive = true
         see_all.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        retry_btn.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        retry_btn.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        retry_btn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        retry_btn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        retry_btn.isHidden = true
+        
+        retry_btn.onTouchUpInside.subscribe(with: self) { () in
+            self.retry => ()
+        }
+    }
+    
+    func showRetry() {
+        retry_btn.isHidden = false
+    }
+    
+    func hideRetry() {
+        retry_btn.isHidden = true
+        self.items.reloadData()
     }
 }
 
@@ -91,7 +117,7 @@ class PopularMoviesCell: UICollectionViewCell {
     }()
     
     lazy var title: UILabel = {
-        let font = Font.heading.make(font: "Lato-Regular", withSize: 16)
+        let font = Font.heading.make(font: "Lato-Regular", withSize: 12)
         let txt = Text(font: font, content: nil)
         txt.textColor = .white
         txt.numberOfLines = 0
@@ -154,7 +180,6 @@ class PopularMoviesCell: UICollectionViewCell {
     
     func render() {
         self.title.text = self.movie.original_title
-        self.rating.text = self.movie.vote_average.formattedAmount
         self.title.sizeToFit()
         self.rating.sizeToFit()
         
@@ -165,7 +190,9 @@ class PopularMoviesCell: UICollectionViewCell {
         if poster != "" {
             let url = API.movies(.get_image(path: poster))
             ImageLoader.loadImageData(urlString: url.stringValue) { (image) in
-                self.cover.image = image
+                DispatchQueue.main.async {
+                    self.cover.image = image
+                }
             }
         }
     }

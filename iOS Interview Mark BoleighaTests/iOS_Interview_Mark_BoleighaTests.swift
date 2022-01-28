@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreData
 @testable import iOS_Interview_Mark_Boleigha
 
 class iOS_Interview_Mark_BoleighaTests: XCTestCase {
@@ -21,6 +22,7 @@ class iOS_Interview_Mark_BoleighaTests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.clearStorage()
     }
     
     func testPopular() {
@@ -45,6 +47,39 @@ class iOS_Interview_Mark_BoleighaTests: XCTestCase {
         }
         
         self.wait(for: [expectation], timeout: 7)
+    }
+    
+    func testSaveToDB() {
+        let expectation = XCTestExpectation()
+        let context = AppDelegate.shared.persistentContainer.viewContext
+        
+        viewModel.loadVideos(category: .upcoming) {
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieResponse")
+            //request.predicate = NSPredicate(format: "age = %@", "12")
+            request.returnsObjectsAsFaults = false
+
+            do {
+                let result = try context.fetch(request)
+                XCTAssertNotNil(result)
+                XCTAssertTrue(result.count > 0)
+            } catch {
+                print("Failed")
+            }
+            expectation.fulfill()
+        }
+        
+        self.wait(for: [expectation], timeout: 5)
+    }
+    
+    private func clearStorage() {
+        let context = AppDelegate.shared.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieResponse")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try context.execute(batchDeleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
     }
 
 }

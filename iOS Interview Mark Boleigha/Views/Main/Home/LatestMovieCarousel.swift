@@ -53,7 +53,7 @@ class LatestMovieCarousel: UIView {
         card.movie = movie
         card.title_label.content = movie.original_title.attributed
         card.overview.content = movie.overview.attributed
-        card.rating.text = movie.vote_average.formattedAmount!
+        card.rating.text = String( movie.vote_average)
         
         if let backdrop = movie.backdrop_path {
             let url = API.movies(.get_image(path: backdrop))
@@ -82,7 +82,7 @@ class LatestMovieCard: UIView {
     }()
     
     lazy var title_label: Text = {
-        let font = Font.body.make(font: "Lato-Regular", withSize: 16)
+        let font = Font.body.make(font: "Lato-Regular", withSize: 12)
         let txt = Text(font: font, content: nil)
         txt.textColor = .white
         return txt

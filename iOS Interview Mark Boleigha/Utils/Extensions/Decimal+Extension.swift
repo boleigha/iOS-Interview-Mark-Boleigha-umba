@@ -17,3 +17,13 @@ extension Decimal {
         return formatter.string(from: self as NSDecimalNumber)
     }
 }
+
+extension NSDecimalNumber {
+    var formattedAmount: String? {
+        let formatter = NumberFormatter()
+        formatter.generatesDecimalNumbers = true
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        return formatter.string(from: self as NSDecimalNumber)
+    }
+}

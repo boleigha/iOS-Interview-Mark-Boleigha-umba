@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import CoreData
+
 
 class HomeViewModel: NSObject {
     
@@ -15,28 +17,63 @@ class HomeViewModel: NSObject {
     var popular: [MovieResponse] = [MovieResponse]()
     var upcoming: [MovieResponse] = [MovieResponse]()
     var latest: Latest?
+    var context: NSManagedObjectContext!
+    
+    var loading: Bool = false
     
     // Injected for testability
     override init() {
         super.init()
         network = HTTP.shared
+        context = AppDelegate.shared.persistentContainer.viewContext
     }
     
-    func loadLocal() {
-        let context = AppDelegate.shared.persistentContainer.viewContext
+    func loadLocal(callback: @escaping () -> Void) {
+        if self.loading == true {
+            return
+        }
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Movies")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        request.returnsObjectsAsFaults = false
+        self.loading = true
+        
+        let upcomingRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieResponse")
+        upcomingRequest.returnsObjectsAsFaults = false
+        
+        let popularRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieResponse")
+        popularRequest.returnsObjectsAsFaults = false
 
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-               print(data.value(forKey: "username") as! String)
+            let predicate = NSPredicate(format: "category == %@", "upcoming")
+            upcomingRequest.predicate = predicate
+            let upcomingResult = try context.fetch(upcomingRequest)
+            for data in upcomingResult as! [NSManagedObject] {
+                guard let movie = data as? MovieResponse else {
+                    return
+                }
+                self.upcoming.appendDistinct(contentsOf: [movie]) { (old, new) -> Bool in
+                    return old.original_title != new.original_title
+                }
+            }
+                        
+            let popularPredicate = NSPredicate(format: "category == %@", "popular")
+            popularRequest.predicate = popularPredicate
+            let popularResult = try context.fetch(popularRequest)
+            
+            for popular in popularResult as! [NSManagedObject] {
+                guard let movie = popular as? MovieResponse else {
+                    return
+                }
+                self.popular.appendDistinct(contentsOf: [movie]) { (old, new) -> Bool in
+                    return old.original_title != new.original_title
+                }
             }
             
-        } catch {
+//            let list = popularResult.map({ _ in MovieResponse(context: self.context)})
             
+            self.loading = false
+            callback()
+        } catch {
+            self.loading = false
+            callback()
             print("Failed")
         }
     }
@@ -83,7 +120,14 @@ class HomeViewModel: NSObject {
             }
             switch status {
             case .success:
-                completion(latest)
+                DispatchQueue.main.async {
+                    do {
+                        try self.context.save()
+                    } catch {
+                        print("error: \(error)")
+                    }
+                    completion(latest)
+                }
             case .failed(_):
                 completion(nil)
             }
@@ -93,13 +137,22 @@ class HomeViewModel: NSObject {
     private func loadPopular(completion: @escaping (MoviesResponse?) -> Void) {
         let request = NetworkRequest(endpoint: .movies(.popular), method: .get, encoding: .url, body: [:])
         network.request(request) { (status, _ response: MoviesResponse?) in
-            guard let latest = response else {
+            guard let movies = response else {
                 completion(nil)
                 return
             }
             switch status {
             case .success:
-                completion(latest)
+                for movie in movies.results {
+                    movie.category = "popular"
+                }
+                do {
+                    try self.context.save()
+                }catch {
+                    print("error")
+                }
+                
+                completion(movies)
             case .failed(_):
                 completion(nil)
             }
@@ -109,18 +162,27 @@ class HomeViewModel: NSObject {
     private func loadUpcoming(completion: @escaping (MoviesResponse?) -> Void) {
         let request = NetworkRequest(endpoint: .movies(.upcoming), method: .get, encoding: .url, body: [:])
         network.request(request) { (status, _ response: MoviesResponse?) in
-            guard let latest = response else {
+            guard let movies = response else {
                 completion(nil)
                 return
             }
             switch status {
             case .success:
-                completion(latest)
+                for movie in movies.results {
+                    movie.category = "upcoming"
+                }
+                do {
+                    try self.context.save()
+                }catch {
+                    print("error")
+                }
+                completion(movies)
             case .failed(_):
                 completion(nil)
             }
         }
     }
+    
 }
 
 

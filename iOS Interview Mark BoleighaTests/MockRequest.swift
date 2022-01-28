@@ -45,7 +45,13 @@ class MockRequest: NetworkService {
         
         do {
             let obj = try JSONSerialization.data(withJSONObject: service, options: [.fragmentsAllowed, .prettyPrinted])
-            let correct = try JSONDecoder().decode(T.self, from: obj)
+            
+            let persistentContainer = AppDelegate.shared.persistentContainer
+            let managedObjectContext = persistentContainer.viewContext
+            let decoder = JSONDecoder()
+            decoder.userInfo[CodingUserInfoKey.managedObjectContext] = managedObjectContext
+            
+            let correct = try decoder.decode(T.self, from: obj)
             completion(.success, correct)
         } catch {
             print("error: \(error)")

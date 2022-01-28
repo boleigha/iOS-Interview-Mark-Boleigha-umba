@@ -93,7 +93,13 @@ class Network: NetworkService {
         switch(response.response?.statusCode) {
         case 200, 201:
             if let jsonData = response.data {
-                if let json = try? JSONDecoder().decode(T.self, from: jsonData) {
+                
+                let persistentContainer = AppDelegate.shared.persistentContainer
+                let managedObjectContext = persistentContainer.viewContext
+                let decoder = JSONDecoder()
+                decoder.userInfo[CodingUserInfoKey.managedObjectContext] = managedObjectContext
+                
+                if let json = try? decoder.decode(T.self, from: jsonData) {
                     completion(.success, json)
                     return
                 }
@@ -103,7 +109,7 @@ class Network: NetworkService {
                     let data = try JSONSerialization.data(withJSONObject: obj, options: [.fragmentsAllowed, .prettyPrinted])
                     
                     do {
-                        let serialized = try JSONDecoder().decode(T.self, from: data)
+                        let serialized = try decoder.decode(T.self, from: data)
                         print("serialized: \(serialized)")
                         completion(.success, serialized)
                     } catch(let error) {

@@ -34,8 +34,8 @@ class HomeViewController: ScrollableView {
     var viewModel: HomeViewModel!
     
     init(viewModel: HomeViewModel) {
-        
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -75,9 +75,29 @@ class HomeViewController: ScrollableView {
             self.navigationController?.pushViewController(view, animated: true)
         }
         
+        upcomingView.retry.subscribe(with: self) { () in
+            self.viewModel.loadVideos(category: .upcoming) {
+                if self.viewModel.popular.count == 0 {
+                    self.upcomingView.showRetry()
+                } else {
+                    self.upcomingView.hideRetry()
+                }
+            }
+        }
+        
         popularView.clicked.subscribe(with: self) { (movie) in
             let view = MovieDetailViewController(movie: movie)
             self.navigationController?.pushViewController(view, animated: true)
+        }
+        
+        upcomingView.retry.subscribe(with: self) { () in
+            self.viewModel.loadVideos(category: .upcoming) {
+                if self.viewModel.upcoming.count == 0 {
+                    self.upcomingView.showRetry()
+                } else {
+                    self.upcomingView.hideRetry()
+                }
+            }
         }
         loadMovies()
     }
@@ -99,26 +119,35 @@ class HomeViewController: ScrollableView {
     }
     
     func loadMovies() {
-        viewModel.loadVideos(category: .latest) { [weak self] in
-            guard let self_ = self, let latest = self_.viewModel.latest else {
-                return
+        viewModel.loadLocal() {
+            self.popularView.items.reloadData()
+            self.upcomingView.items.reloadData()
+            
+            self.viewModel.loadVideos(category: .latest) { [weak self] in
+                guard let self_ = self, let latest = self_.viewModel.latest else {
+                    return
+                }
+                self_.latestView.render(with: latest)
             }
-            self_.latestView.render(with: latest)
+            
+            self.viewModel.loadVideos(category: .popular) { [weak self] in
+                guard let self_ = self else {
+                    return
+                }
+                if self_.viewModel.popular.count == 0 {
+                    self_.popularView.showRetry()
+                }
+                self_.popularView.items.reloadData()
+            }
+            
+            self.viewModel.loadVideos(category: .upcoming) { [weak self] in
+                guard let self_ = self else {
+                    return
+                }
+                self_.upcomingView.items.reloadData()
+            }
         }
         
-        viewModel.loadVideos(category: .popular) { [weak self] in
-            guard let self_ = self else {
-                return
-            }
-            self_.popularView.items.reloadData()
-        }
-        
-        viewModel.loadVideos(category: .upcoming) { [weak self] in
-            guard let self_ = self else {
-                return
-            }
-            self_.upcomingView.items.reloadData()
-        }
     }
 
 }
